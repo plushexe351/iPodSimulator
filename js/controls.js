@@ -57,11 +57,11 @@ menuItems.forEach(ele => {
 
 document.body.addEventListener('keydown', (event) => {
 
-    if (menuItems[i].classList.contains('active') && event.keyCode == 13)
+    if (menuItems[i].classList.contains('active') && event.key === "Enter")
 
         document.querySelector('.flex-screen').classList.toggle('split-screen');
 
-    if (event.keyCode == 40) {
+    if (event.key === "ArrowDown") {
 
         i = i == menuItems.length - 1 ? 0 : i += 1;
 
@@ -81,7 +81,7 @@ document.body.addEventListener('keydown', (event) => {
 
 
     }
-    else if (event.keyCode == 38) {
+    else if (event.key === "ArrowUp") {
 
         i = i == 0 ? menuItems.length - 1 : i -= 1;
 
@@ -104,10 +104,21 @@ document.body.addEventListener('keydown', (event) => {
 
 })
 
-
+let mouseEvent1;
+let mouseEvent2;
 controlBtns.forEach(controlBtn => {
 
-    controlBtn.addEventListener('mousedown', () => {
+    if (navigator.maxTouchPoints > 1) {
+        mouseEvent1 = 'mouseenter';
+        mouseEvent2 = 'mouseout';
+    }
+    else {
+        mouseEvent1 = 'mousedown';
+        mouseEvent2 = 'mouseup';
+    }
+
+
+    controlBtn.addEventListener(mouseEvent1, () => {
 
         if (controlBtn.getAttribute('id') == 'menu') gradientDirection = `to bottom`
 
@@ -126,7 +137,7 @@ controlBtns.forEach(controlBtn => {
         }
 
     })
-    controlBtn.addEventListener('mouseup', () => {
+    controlBtn.addEventListener(mouseEvent2, () => {
 
         controlBtn.classList.remove('press');
 
