@@ -15,16 +15,21 @@ body {
     min-height: 100vh;
     display: grid;
     place-items: center;
-    overflow: hidden;
+
 }
 
 .power-btn {
     position: fixed;
+    color: rgb(0, 256, 0);
     font-size: 2rem;
     padding: 2vw;
     top: 0;
     right: 0;
     transition: 0.15s;
+}
+
+.power-btn.active {
+    color: rgb(256, 0, 0);
 }
 
 .ipod {
@@ -66,10 +71,8 @@ body {
     filter: brightness(100%);
 }
 
-
-
 .bootscreen {
-    background-color: rgb(12, 12, 12);
+    background-color: rgb(22, 24, 24);
     height: 100%;
     width: 100%;
     display: grid;
@@ -79,7 +82,7 @@ body {
 }
 
 .bootscreen .fa-apple {
-    filter: drop-shadow(0 0 60px rgba(255, 255, 255, 1)) drop-shadow(0 0 80px white);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
 .ipod.active .bootscreen {
