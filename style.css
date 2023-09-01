@@ -79,7 +79,7 @@ body {
     display: grid;
     place-items: center;
     color: white;
-    font-size: 4rem;
+    font-size: 6rem;
 }
 
 .bootscreen .fa-apple {
@@ -95,6 +95,7 @@ body {
 }
 
 .screen .status-bar {
+    /* width: 50%; */
     background-image: linear-gradient(to top, #cdcdcd 20%, #ffffff);
     border-bottom: 2px solid #c0c0c0;
     display: flex;
@@ -133,10 +134,17 @@ body {
 }
 
 .menu-items {
+    /* transform: translate(-100%, 0px); */
     font-size: 1.5rem;
     font-weight: 700;
+    /* width: 50%; */
     height: 100%;
     transition: 0.3s ease;
+}
+
+.split-screen {
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.477);
 }
 
 .ipod.active .menu-items {
@@ -144,7 +152,7 @@ body {
 }
 
 .menu-items>* {
-    padding: 1% 2%;
+    padding: 2px 5px;
     cursor: pointer;
 }
 
@@ -240,5 +248,17 @@ body {
     .ipod.active {
         width: calc(2.4 * 110px);
         height: calc(4.1 * 110px);
+    }
+
+    .menu-items {
+        font-size: 1rem;
+    }
+
+    .bootscreen {
+        font-size: 3rem;
+    }
+
+    .ipod.active .menu-items {
+        font-size: 0.74rem;
     }
 }

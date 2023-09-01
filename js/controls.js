@@ -3,8 +3,6 @@ const buttonRing = document.querySelector('.button-ring');
 const controlBtns = document.querySelectorAll('.control-btn');
 let gradientDirection;
 
-
-
 const menuItems = [
     document.getElementById('music'),
     document.getElementById('videos'),
@@ -16,9 +14,28 @@ const menuItems = [
     document.getElementById('now-playing'),
 ]
 
+const itemSelector = document.createElement('i');
+
+itemSelector.classList.add('fa-solid');
+
+itemSelector.classList.add('menu-item-selector');
+
+itemSelector.classList.add('fa-chevron-right');
+
+menuItems[0].appendChild(itemSelector);
+
+
+
+let i = 0;
+let opindex = 0;
 menuItems.forEach(ele => {
 
     ele.addEventListener('click', () => {
+
+        if (ele.classList.contains('active'))
+
+            document.querySelector('.flex-screen').classList.toggle('split-screen');
+
 
         menuItems.forEach(ele => {
 
@@ -28,15 +45,21 @@ menuItems.forEach(ele => {
 
         ele.classList.add('active');
 
+        ele.appendChild(itemSelector);
+
+        i = parseInt(ele.dataset.index);
+
     })
 
 })
 
-let i = 0;
-
 // keyboard support
 
 document.body.addEventListener('keydown', (event) => {
+
+    if (menuItems[i].classList.contains('active') && event.keyCode == 13)
+
+        document.querySelector('.flex-screen').classList.toggle('split-screen');
 
     if (event.keyCode == 40) {
 
@@ -51,6 +74,8 @@ document.body.addEventListener('keydown', (event) => {
             }
 
             menuItems[i].classList.add('active');
+
+            menuItems[i].appendChild(itemSelector);
 
         })
 
@@ -69,6 +94,9 @@ document.body.addEventListener('keydown', (event) => {
             }
 
             menuItems[i].classList.add('active');
+
+            menuItems[i].appendChild(itemSelector);
+
 
         })
 
