@@ -25,6 +25,15 @@ menuBtn.addEventListener('click', () => {
         document.querySelector('.flex-screen').classList.remove('split-screen');
 })
 
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+        if (menuItems[i].classList.contains('active'))
+
+            document.querySelector('.flex-screen').classList.remove('split-screen');
+    }
+
+})
+
 let gradientDirection;
 
 const menuItems = [
