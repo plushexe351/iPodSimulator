@@ -1,6 +1,30 @@
 
 const buttonRing = document.querySelector('.button-ring');
 const controlBtns = document.querySelectorAll('.control-btn');
+const menuBtn = document.querySelector('#menu-btn');
+const helpBtn = document.querySelector('.help-btn');
+const instructions = document.querySelector('.how-to-use');
+const closeInstructions = document.querySelector('.close-instruction-window');
+
+helpBtn.onclick = () => {
+    instructions.classList.add('active');
+    closeInstructions.classList.add('show');
+    helpBtn.classList.add('hide');
+
+}
+closeInstructions.onclick = () => {
+    instructions.classList.remove('active');
+    closeInstructions?.classList.remove('show');
+    helpBtn.classList.remove('hide');
+}
+
+menuBtn.addEventListener('click', () => {
+
+    if (menuItems[i].classList.contains('active'))
+
+        document.querySelector('.flex-screen').classList.remove('split-screen');
+})
+
 let gradientDirection;
 
 const menuItems = [
@@ -34,7 +58,7 @@ menuItems.forEach(ele => {
 
         if (ele.classList.contains('active'))
 
-            document.querySelector('.flex-screen').classList.toggle('split-screen');
+            document.querySelector('.flex-screen').classList.add('split-screen');
 
 
         menuItems.forEach(ele => {
@@ -59,7 +83,7 @@ document.body.addEventListener('keydown', (event) => {
 
     if (menuItems[i].classList.contains('active') && event.key === "Enter")
 
-        document.querySelector('.flex-screen').classList.toggle('split-screen');
+        document.querySelector('.flex-screen').classList.add('split-screen');
 
     if (event.key === "ArrowDown") {
 
@@ -120,11 +144,11 @@ controlBtns.forEach(controlBtn => {
 
     controlBtn.addEventListener(mouseEvent1, () => {
 
-        if (controlBtn.getAttribute('id') == 'menu') gradientDirection = `to bottom`
+        if (controlBtn.getAttribute('id') == 'menu-btn') gradientDirection = `to bottom`
 
-        else if (controlBtn.getAttribute('id') == 'previous') gradientDirection = 'to right'
+        else if (controlBtn.getAttribute('id') == 'previous-btn') gradientDirection = 'to right'
 
-        else if (controlBtn.getAttribute('id') == 'play-pause') gradientDirection = 'to top'
+        else if (controlBtn.getAttribute('id') == 'play-pause-btn') gradientDirection = 'to top'
 
         else gradientDirection = 'to left'
 

@@ -19,9 +19,9 @@ body {
 
 }
 
-.power-btn {
+.nav-items {
     position: fixed;
-    color: rgb(0, 256, 0);
+    z-index: 9999;
     font-size: 2rem;
     padding: 2vw;
     top: 0;
@@ -29,9 +29,63 @@ body {
     transition: 0.15s;
 }
 
+.power-btn {
+    color: rgb(0, 256, 0);
+}
+
 .power-btn.active {
     color: rgb(256, 0, 0);
 }
+
+.how-to-use.active {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.close-instruction-window {
+    display: none;
+}
+
+.close-instruction-window.show {
+    display: unset;
+}
+
+.help-btn.hide {
+    display: none;
+}
+
+.how-to-use {
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.574);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    transform: 0.3s ease;
+}
+
+.what-btn>*,
+.what-it-does>* {
+    padding: 10px;
+    text-align: center;
+}
+
+.how-to-use h1 {
+    text-align: center;
+    min-width: 100%;
+}
+
+.how-to-use .what-btn>i {
+    display: block;
+}
+
 
 .ipod {
     background-color: #dddddd;
@@ -204,37 +258,37 @@ body {
     font-size: 0.75rem !important;
 }
 
-#menu {
+#menu-btn {
     text-transform: uppercase;
     font-weight: 700;
     top: 20px;
 }
 
-#forwards {
+#forwards-btn {
     left: calc(100% - 20px);
 }
 
-#previous {
+#previous-btn {
     left: 20px;
 }
 
-#previous,
-#forwards {
+#previous-btn,
+#forwards-btn {
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-#play-pause {
+#play-pause-btn {
     top: calc(100% - 20px);
 }
 
-#menu,
-#play-pause {
+#menu-btn,
+#play-pause-btn {
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#play-pause i {
+#play-pause-btn i {
     display: inline;
     padding-inline: 3px;
 }
@@ -260,5 +314,11 @@ body {
 
     .ipod.active .menu-items {
         font-size: 0.74rem;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .how-to-use {
+        font-size: 0.7rem;
     }
 }
