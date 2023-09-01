@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     display: grid;
     place-items: center;
+    overflow: hidden;
 
 }
 
@@ -89,14 +90,19 @@ body {
     display: none;
 }
 
+.screen .flex-screen {
+    height: 100%;
+}
+
 .screen .status-bar {
-    height: 7%;
     background-image: linear-gradient(to top, #cdcdcd 20%, #ffffff);
     border-bottom: 2px solid #c0c0c0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3%;
+    font-size: 0.7rem;
+    padding-inline: 7px;
+    transition: 0.5s ease;
 }
 
 .status-bar .status-icons {
@@ -113,9 +119,8 @@ body {
     transition: 0.5s ease;
 }
 
-.ipod.active .status-bar p,
-.ipod.active .status-bar .fa-play {
-    font-size: 0.7rem;
+.play-pause-status {
+    color: rgb(71, 184, 255);
 }
 
 .fa-battery {
@@ -125,6 +130,33 @@ body {
 
 .ipod.active .fa-battery {
     font-size: 1rem;
+}
+
+.menu-items {
+    font-size: 1.5rem;
+    font-weight: 700;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.ipod.active .menu-items {
+    font-size: 1rem;
+}
+
+.menu-items>* {
+    padding: 1% 2%;
+    cursor: pointer;
+}
+
+.menu-items>*.active {
+    background-image: linear-gradient(to bottom right, rgb(115, 201, 255), rgb(0, 109, 176));
+    color: white;
+}
+
+
+.menu-item-selector {
+    font-weight: 800;
+    float: right;
 }
 
 .button-ring {
