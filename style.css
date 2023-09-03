@@ -108,7 +108,7 @@ body {
     width: calc(2.4 * 134px);
     height: calc(4.0 * 134px);
     border-radius: 18px;
-    transform: unset;
+    transform: translate(0, -25px);
 }
 
 .ipod.active .control-btn {
@@ -184,6 +184,7 @@ body {
 
 .instruction {
     display: none;
+    font-size: 1rem;
 }
 
 .instruction.active {
@@ -423,6 +424,10 @@ body {
 
 @media only screen and (max-width:500px) {
     .how-to-use {
+        font-size: 0.7rem;
+    }
+
+    .instruction {
         font-size: 0.7rem;
     }
 }
