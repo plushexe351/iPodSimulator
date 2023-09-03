@@ -108,7 +108,7 @@ body {
     width: calc(2.4 * 134px);
     height: calc(4.0 * 134px);
     border-radius: 18px;
-    transform: translate(0, -25px);
+    transform: translate(0, 0);
 }
 
 .ipod.active .control-btn {
@@ -182,14 +182,14 @@ body {
     align-items: center;
 }
 
-.instruction {
+/* .instruction {
     display: none;
     font-size: 1rem;
 }
 
 .instruction.active {
     display: unset;
-}
+} */
 
 .menu-item-active {
     left: 0 !important;
@@ -427,7 +427,7 @@ body {
         font-size: 0.7rem;
     }
 
-    .instruction {
+    /* .instruction {
         font-size: 0.7rem;
-    }
+    } */
 }

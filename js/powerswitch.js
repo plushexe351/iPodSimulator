@@ -1,7 +1,7 @@
 const toggleSwitch = document.querySelector('.power-btn');
 const ipod = document.querySelector('.ipod');
 const iPodScreen = document.querySelector('.screen');
-const showinstructions = document.querySelector('.instruction');
+// const showinstructions = document.querySelector('.instruction');
 
 
 toggleSwitch.onclick = () => {
@@ -13,7 +13,7 @@ toggleSwitch.onclick = () => {
 
     setTimeout(() => {
 
-        showinstructions.classList.toggle('active');
+        // showinstructions.classList.toggle('active');
 
         ipod.classList.toggle('active');
 
