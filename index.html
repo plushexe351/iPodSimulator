@@ -11,7 +11,9 @@
     ></script>
     <link rel="stylesheet" href="style.css" />
     <script src="js/powerswitch.js" defer></script>
-    <script src="js/controls.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/showcontrols.js" defer></script>
+    <script src="js/coverflow.js" defer></script>
   </head>
   <body>
     <div class="nav-items">
@@ -37,11 +39,11 @@
         </div>
         <p>ArrowDown</p>
         <p>ArrowUp</p>
-        <p>Enter/Return</p>
+        <p>Enter / Return</p>
         <p>Esc</p>
       </div>
       <div class="what-it-does">
-        <p>Power On/Off</p>
+        <p>Power On / Off</p>
         <p>Open / Close this window</p>
         <p>Go Back / To Menu</p>
         <p>Next Song / Forward Fast</p>
@@ -58,28 +60,49 @@
         <div class="bootscreen">
           <i class="fab fa-apple"></i>
         </div>
-        <div class="flex-screen">
-          <div class="status-bar">
-            <p>iPod</p>
-            <div class="status-icons">
-              <i class="fa-solid fa-play play-pause-status"></i>
-              <i class="fa-solid fa-battery"></i>
-            </div>
+        <div class="status-bar">
+          <p>iPod</p>
+          <div class="status-icons">
+            <i class="fa-solid fa-play play-pause-status"></i>
+            <i class="fa-solid fa-battery"></i>
           </div>
-          <div class="menu-items">
-            <div class="active" id="music" data-index="0">
+        </div>
+        <div class="flex-screen">
+          <div
+            class="menu-items"
+            title="click to preview | double-click to open"
+          >
+            <div id="music" data-index="0" data-brief="">
               Music
               <!-- Music <i class="fa-solid fa-chevron-right menu-item-selector"></i> -->
             </div>
-            <div id="videos" data-index="1">Videos</div>
-            <div id="photos" data-index="2">Photos</div>
-            <div id="podcasts" data-index="3">Podcasts</div>
-            <div id="extras" data-index="4">Extras</div>
-            <div id="settings" data-index="5">Settings</div>
-            <div id="shuffle-songs" data-index="6">Shuffle Songs</div>
-            <div id="now-playing" data-index="7">Now Playing</div>
+            <!-- <div id="videos" data-index="1">Videos</div>
+            <div id="photos" data-index="2">Photos</div> -->
+            <div id="podcasts" data-index="1" data-brief="No Podcasts">
+              Podcasts
+            </div>
+            <!-- <div id="extras" data-index="4">Extras</div>
+            <div id="settings" data-index="5">Settings</div> -->
+            <div
+              id="shuffle-songs"
+              data-index="2"
+              data-brief="Available soon..."
+            >
+              Shuffle Songs
+            </div>
+            <div id="now-playing" data-index="3" data-brief="Available soon...">
+              Now Playing
+            </div>
           </div>
         </div>
+        <div class="preview-screen">
+          <!-- <img src="albumart2.png" alt="" /> -->
+          <!-- <img src="brand.gif" alt="" /> -->
+        </div>
+        <div class="music-screen">
+          <div class="boxtest">Work in Progress...</div>
+        </div>
+        <div class="menu-item-brief">No Podcasts</div>
       </div>
       <div class="button-ring">
         <div id="menu-btn" class="control-btn">menu</div>
