@@ -13,8 +13,6 @@ toggleSwitch.onclick = () => {
 
     setTimeout(() => {
 
-        // showinstructions.classList.toggle('active');
-
         ipod.classList.toggle('active');
 
     }, 500);
