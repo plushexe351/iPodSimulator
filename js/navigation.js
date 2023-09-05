@@ -5,19 +5,12 @@ const itemStatus = document.querySelector('.menu-item-brief');
 const statusBar = document.querySelector('.status-bar');
 const menuItemsContainer = document.querySelector('.menu-items');
 const musicScreen = document.querySelector('.music-screen');
+const shufflePlayScreen = document.querySelector('.shuffle-play-screen');
+const NowPlayingScreen = document.querySelector('.now-playing-screen');
+const menuItemsScreen = document.querySelectorAll('.menu-item-screen');
+const menuItems = document.querySelectorAll('.menu-item');
 
 let splitScreen = false;
-
-const menuItems = [
-    document.getElementById('music'),
-    // document.getElementById('videos'),
-    // document.getElementById('photos'),
-    document.getElementById('podcasts'),
-    // document.getElementById('extras'),
-    // document.getElementById('settings'),
-    document.getElementById('shuffle-songs'),
-    document.getElementById('now-playing'),
-]
 
 function addSplitScreen() {
 
@@ -48,24 +41,35 @@ function resetStatusBar() {
 
 }
 
-menuBtn.addEventListener('click', removeSplitScreen);
-
 menuBtn.addEventListener('click', () => {
 
+    if (musicPlayer.classList.contains('menu-item-active')) {
+        musicPlayer.classList.remove('menu-item-active');
+    }
 
-    menuItems.forEach(ele => {
+    else {
 
-        ele.classList.remove('active2');
+        menuItems.forEach(ele => {
 
-    })
+            ele.classList.remove('active2');
 
-    removeSplitScreen();
-    musicScreen.classList.remove('menu-item-active');
+        })
+
+        removeSplitScreen();
+
+        menuItemsScreen.forEach(screen => {
+
+            screen.classList.remove('menu-item-active');
+
+
+        })
+    }
+
 
 
 })
 
-document.body.addEventListener('keydown', (e) => (e.key == 'Escape' ? menuBtn.click() : null))
+document.body.addEventListener('keydown', (e) => (e.key == 'Backspace' ? menuBtn.click() : null))
 
 const itemSelector = document.createElement('i');
 
@@ -75,19 +79,19 @@ itemSelector.classList.add('menu-item-selector');
 
 itemSelector.classList.add('fa-chevron-right');
 
-// menuItems[0].appendChild(itemSelector);
 
 let index = -1;
 
 function displayItemBrief(item) {
 
-    itemStatus.textContent = item.dataset.brief;
+    itemStatus.textContent = item.dataset.brief || '';
 
 }
 
 menuItems.forEach(ele => {
 
     ele.addEventListener('click', () => {
+
 
         displayItemBrief(ele)
 
@@ -101,8 +105,10 @@ menuItems.forEach(ele => {
 
         if (ele.classList.contains('active2') && splitScreen) {
 
-            musicScreen.classList.add('menu-item-active');
-            resetStatusBar();
+            ele != menuItems[1] ? resetStatusBar() : null;
+            ele == menuItems[0] ? menuItemsScreen[0].classList.add('menu-item-active') : null;
+            ele == menuItems[2] ? menuItemsScreen[1].classList.add('menu-item-active') : null;
+            ele == menuItems[3] ? menuItemsScreen[2].classList.add('menu-item-active') : null;
 
         }
 
@@ -136,45 +142,93 @@ menuItems.forEach(ele => {
 
 // keyboard support
 
+
 document.body.addEventListener('keydown', (event) => {
 
-    if (event.key === "Enter") {
+    if (menuItemsScreen[0].classList.contains('menu-item-active')) {
 
-        menuItems[index].click();
+        if (event.key === "Enter") {
 
+            songs[songindex].click();
+
+        }
+
+
+        if (event.key === "ArrowDown") {
+
+            songindex = songindex == songs.length - 1 ? 0 : songindex += 1;
+
+            songs.forEach(function callback(song, index) {
+
+                song.classList.remove('active');
+
+            })
+
+            songs[songindex].classList.add('active');
+
+            songs[songindex].appendChild(itemSelector);
+
+
+        }
+
+        else if (event.key === "ArrowUp") {
+
+            songindex = songindex == 0 ? songs.length - 1 : songindex -= 1;
+
+            songs.forEach(function callback(song, index) {
+
+                song.classList.remove('active');
+
+            })
+
+            songs[songindex].classList.add('active');
+
+            songs[songindex].appendChild(itemSelector);
+
+
+        }
     }
+    else {
+        if (event.key === "Enter") {
+
+            menuItems[index].click();
+
+        }
 
 
-    if (event.key === "ArrowDown") {
+        if (event.key === "ArrowDown") {
 
-        index = index == menuItems.length - 1 ? 0 : index += 1;
+            index = index == menuItems.length - 1 ? 0 : index += 1;
 
-        menuItems.forEach(function callback(ele, index) {
+            menuItems.forEach(function callback(ele, index) {
 
-            ele.classList.remove('active');
+                ele.classList.remove('active');
 
-        })
+            })
 
-        menuItems[index].classList.add('active');
+            menuItems[index].classList.add('active');
 
-        menuItems[index].appendChild(itemSelector);
+            menuItems[index].appendChild(itemSelector);
 
-    }
 
-    else if (event.key === "ArrowUp") {
+        }
 
-        index = index == 0 ? menuItems.length - 1 : index -= 1;
+        else if (event.key === "ArrowUp") {
 
-        menuItems.forEach(function callback(ele, index) {
+            index = index == 0 ? menuItems.length - 1 : index -= 1;
 
-            ele.classList.remove('active');
+            menuItems.forEach(function callback(ele, index) {
 
-        })
+                ele.classList.remove('active');
 
-        menuItems[index].classList.add('active');
+            })
 
-        menuItems[index].appendChild(itemSelector);
+            menuItems[index].classList.add('active');
 
+            menuItems[index].appendChild(itemSelector);
+
+
+        }
     }
 
 })

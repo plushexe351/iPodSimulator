@@ -14,6 +14,7 @@
     <script src="js/navigation.js" defer></script>
     <script src="js/showcontrols.js" defer></script>
     <script src="js/coverflow.js" defer></script>
+    <script src="js/music.js" defer></script>
   </head>
   <body>
     <div class="nav-items">
@@ -42,7 +43,7 @@
         <p>ArrowDown</p>
         <p>ArrowUp</p>
         <p>Enter / Return</p>
-        <p>Esc</p>
+        <p>Backspace</p>
       </div>
       <div class="what-it-does">
         <p>Power On / Off</p>
@@ -76,25 +77,36 @@
             class="menu-items"
             title="click to preview | double-click to open"
           >
-            <div id="music" data-index="0" data-brief="">
+            <div id="music" class="menu-item" data-index="0" data-brief="">
               Music
               <!-- Music <i class="fa-solid fa-chevron-right menu-item-selector"></i> -->
             </div>
             <!-- <div id="videos" data-index="1">Videos</div>
             <div id="photos" data-index="2">Photos</div> -->
-            <div id="podcasts" data-index="1" data-brief="No Podcasts">
+            <div
+              id="podcasts"
+              class="menu-item"
+              data-index="1"
+              data-brief="No Podcasts"
+            >
               Podcasts
             </div>
             <!-- <div id="extras" data-index="4">Extras</div>
             <div id="settings" data-index="5">Settings</div> -->
             <div
               id="shuffle-songs"
+              class="menu-item"
               data-index="2"
               data-brief="Available soon..."
             >
               Shuffle Songs
             </div>
-            <div id="now-playing" data-index="3" data-brief="Available soon...">
+            <div
+              id="now-playing"
+              class="menu-item"
+              data-index="3"
+              data-brief="Available soon..."
+            >
               Now Playing
             </div>
           </div>
@@ -103,7 +115,48 @@
           <!-- <img src="albumart2.png" alt="" /> -->
           <!-- <img src="brand.gif" alt="" /> -->
         </div>
-        <div class="music-screen">
+        <div class="music-screen menu-item-screen">
+          <div class="menu-items" title="click to select | Scroll to see more">
+            <div class="songs" id="song-1" data-index="0">
+              Starboy - The Weeknd
+            </div>
+            <div class="songs" id="song-2" data-index="1">
+              WASTE - Kxllswxtch
+            </div>
+            <div class="songs" id="song-3" data-index="2">
+              Heartless - The Weeknd
+            </div>
+            <div class="songs" id="song-4" data-index="3">
+              Glimpse Of Us - Joji
+            </div>
+            <div class="songs" id="song-5" data-index="4">One - Metallica</div>
+            <div class="songs" id="song-6" data-index="5">
+              Reflections - The Neighborhood
+            </div>
+            <div class="songs" id="song-7" data-index="6">
+              Is There Someone Else - The Weeknd
+            </div>
+            <div class="songs" id="song-8" data-index="7">
+              Mary on A Cross - Ghost
+            </div>
+            <div class="songs" id="song-9" data-index="8">
+              Let's Fall in Love for the Night - FINNEAS
+            </div>
+            <div class="songs" id="song-10" data-index="9">
+              Melting - Kali Uchis
+            </div>
+            <div class="songs" id="song-11" data-index="10">
+              PRIDE. - Kendrick Lamar
+            </div>
+          </div>
+        </div>
+        <div class="shuffle-play-screen menu-item-screen">
+          <div class="">Work in Progress...</div>
+        </div>
+        <div class="now-playing-screen menu-item-screen">
+          <div class="">Work in Progress...</div>
+        </div>
+        <div class="music-player">
           <div class="">Work in Progress...</div>
         </div>
         <div class="menu-item-brief">No Podcasts</div>

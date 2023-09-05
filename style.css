@@ -168,24 +168,28 @@ body {
     transition: 0.2s ease;
 }
 
-.screen .music-screen {
+.screen .menu-item-screen,
+.screen .music-player {
     position: absolute;
+    overflow-x: scroll;
     top: 0;
-    left: 100%;
+    left: 110%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.677);
     height: 100%;
     width: 100%;
-    background-color: yellow;
     z-index: 15;
     transition: 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+.music-player {
+    z-index: 17 !important;
+}
 
 .menu-item-active {
     left: 0 !important;
 }
+
 
 .screen .preview-screen {
     position: absolute;
@@ -252,7 +256,7 @@ body {
     align-items: center;
     font-size: 0.8rem;
     padding-inline: 7px;
-    transition: 0.5s ease;
+    /* transition: 0.2s ease; */
     z-index: 50;
 }
 
@@ -410,6 +414,10 @@ body {
     }
 
     .menu-item-brief {
+        font-size: 0.7rem;
+    }
+
+    .screen .status-bar {
         font-size: 0.7rem;
     }
 }
