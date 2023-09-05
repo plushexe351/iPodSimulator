@@ -2,9 +2,7 @@ const songs = document.querySelectorAll('.songs');
 
 let songindex = -1;
 
-
 const musicPlayer = document.querySelector('.music-player');
-
 
 songs.forEach(song => {
 
@@ -52,6 +50,4 @@ songs.forEach(song => {
     })
 
 })
-
-// keyboard support
 

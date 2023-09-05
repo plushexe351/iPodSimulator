@@ -17,6 +17,7 @@ let splitScreen = false;
 function addSplitScreen() {
 
     document.querySelector('.flex-screen').classList.add('split-screen');
+
     statusBar.classList.add('split-screen');
 
     splitScreen = true;
@@ -48,14 +49,19 @@ menuBtn.addEventListener('click', () => {
     if (musicPlayer.classList.contains('menu-item-active')) {
 
         menuItemsScreen.forEach(screen => {
+
             screen.style.display = 'unset';
+
         })
+
         musicPlayer.classList.remove('menu-item-active');
+
     }
 
     else {
 
         flexScreen.style.display = 'unset';
+
         previewScreen.style.display = 'unset';
 
         menuItems.forEach(ele => {

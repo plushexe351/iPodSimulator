@@ -60,7 +60,7 @@ body {
     width: 100%;
     height: 100%;
     font-size: 1.1rem;
-    background-color: rgba(255, 255, 255, 0.574);
+    background-color: rgba(255, 255, 255, 0.500);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     transform: 0.3s ease;
@@ -182,6 +182,11 @@ body {
 }
 
 .music-player {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    color: black;
     z-index: 30;
 }
 
@@ -229,6 +234,31 @@ body {
     width: unset;
     animation: flowleft 10s linear infinite;
 }
+
+.music-player {
+
+    perspective: 800px;
+}
+
+.music-player .album-art {
+    height: 55%;
+    width: 45%;
+    /* transform-style: preserve-3d; */
+    background-color: pink;
+    transform: rotateY(30deg);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0)70%, rgba(0, 0, 0, 0.2));
+    filter: brightness(0%);
+}
+
+
+.song-info h4 {
+    font-size: 0.9rem;
+}
+
+.song-info p {
+    font-size: 0.7rem;
+}
+
 
 @keyframes flowleft {
     0% {
@@ -422,6 +452,14 @@ body {
 
     .screen .status-bar {
         font-size: 0.7rem;
+    }
+
+    .song-info h4 {
+        font-size: 0.7rem;
+    }
+
+    .song-info p {
+        font-size: 0.5rem;
     }
 }
 
