@@ -178,12 +178,15 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.677);
     height: 100%;
     width: 100%;
-    z-index: 15;
     transition: 0.2s ease;
 }
 
 .music-player {
-    z-index: 17 !important;
+    z-index: 30;
+}
+
+.menu-item-screen {
+    z-index: 20;
 }
 
 .menu-item-active {

@@ -10,6 +10,20 @@ songs.forEach(song => {
 
     song.addEventListener('click', () => {
 
+        while (imgContainer.hasChildNodes()) {
+
+            imgContainer.removeChild(imgContainer.firstChild);
+
+        }
+
+        if (song.classList.contains('active')) {
+
+            menuItemsScreen.forEach(screen => {
+                screen.style.display = 'none';
+            })
+            musicPlayer.classList.add('menu-item-active');
+        }
+
         songs.forEach(song => {
 
             if (song.classList.contains('active'))
@@ -18,15 +32,18 @@ songs.forEach(song => {
 
         })
 
-        musicPlayer.classList.add('menu-item-active');
+        songs.forEach(song => {
 
-        // menuBtn.addEventListener('click', () => {
-        //     if (musicPlayer.classList.contains('menu-item-active'))
-        //         musicPlayer.classList.remove('menu-item-active');
+            if (song.classList.contains('active2'))
 
-        // })
+                song.classList.remove('active2');
+
+        })
+
 
         song.classList.add('active');
+
+        song.classList.add('active2');
 
         song.appendChild(itemSelector);
 

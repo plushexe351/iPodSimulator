@@ -14,15 +14,15 @@ function createPreviewImg(src, className) {
 
 function coverflow() {
     createPreviewImg('music/albumart1.png', 'album-art');
-    setTimeout(() => {
-        canCoverflow ? createPreviewImg('music/albumart2.png', 'album-art') : null
-    }, 10000);
-    setTimeout(() => {
-        canCoverflow ? createPreviewImg('music/albumart3.png', 'album-art') : null;
-    }, 20000);
-    setTimeout(() => {
-        canCoverflow ? createPreviewImg('music/albumart4.png', 'album-art') : null;
-    }, 30000);
+    // setTimeout(() => {
+    //     canCoverflow ? createPreviewImg('music/albumart2.png', 'album-art') : null
+    // }, 10000);
+    // setTimeout(() => {
+    //     canCoverflow ? createPreviewImg('music/albumart3.png', 'album-art') : null;
+    // }, 20000);
+    // setTimeout(() => {
+    //     canCoverflow ? createPreviewImg('music/albumart4.png', 'album-art') : null;
+    // }, 30000);
 }
 
 menuItems.forEach(item => {

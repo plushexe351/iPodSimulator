@@ -9,6 +9,8 @@ const shufflePlayScreen = document.querySelector('.shuffle-play-screen');
 const NowPlayingScreen = document.querySelector('.now-playing-screen');
 const menuItemsScreen = document.querySelectorAll('.menu-item-screen');
 const menuItems = document.querySelectorAll('.menu-item');
+const flexScreen = document.querySelector('.flex-screen');
+const previewScreen = document.querySelector('.preview-screen');
 
 let splitScreen = false;
 
@@ -44,10 +46,17 @@ function resetStatusBar() {
 menuBtn.addEventListener('click', () => {
 
     if (musicPlayer.classList.contains('menu-item-active')) {
+
+        menuItemsScreen.forEach(screen => {
+            screen.style.display = 'unset';
+        })
         musicPlayer.classList.remove('menu-item-active');
     }
 
     else {
+
+        flexScreen.style.display = 'unset';
+        previewScreen.style.display = 'unset';
 
         menuItems.forEach(ele => {
 
@@ -84,7 +93,7 @@ let index = -1;
 
 function displayItemBrief(item) {
 
-    itemStatus.textContent = item.dataset.brief || '';
+    itemStatus.textContent = item.dataset.brief;
 
 }
 
@@ -92,8 +101,7 @@ menuItems.forEach(ele => {
 
     ele.addEventListener('click', () => {
 
-
-        displayItemBrief(ele)
+        displayItemBrief(ele);
 
         while (imgContainer.hasChildNodes()) {
 
@@ -104,6 +112,12 @@ menuItems.forEach(ele => {
         addSplitScreen();
 
         if (ele.classList.contains('active2') && splitScreen) {
+
+            if (ele != menuItems[1]) {
+                flexScreen.style.display = 'none';
+                previewScreen.style.display = 'none';
+            }
+
 
             ele != menuItems[1] ? resetStatusBar() : null;
             ele == menuItems[0] ? menuItemsScreen[0].classList.add('menu-item-active') : null;
