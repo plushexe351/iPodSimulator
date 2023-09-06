@@ -72,7 +72,6 @@ body {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
     transition: 0.3s;
     z-index: 999;
 }
@@ -83,10 +82,12 @@ body {
     text-align: center;
 }
 
-.how-to-use h1 {
+.how-to-use h1,
+.how-to-use p {
     text-align: center;
     min-width: 100%;
 }
+
 
 .how-to-use .what-btn>i {
     display: block;
@@ -549,7 +550,7 @@ p.song-info,
 
 @media only screen and (max-width:500px) {
     .how-to-use {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     /* .instruction {
