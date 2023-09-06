@@ -1,6 +1,6 @@
 const songs = document.querySelectorAll('.songs');
 
-const albumArt = document.querySelector('.music-player > .album-art');
+const albumArt = document.querySelector('.music-player .album-art');
 
 const songTitle = document.querySelector('.song-title');
 
@@ -22,7 +22,29 @@ let songindex = -1;
 
 const musicPlayer = document.querySelector('.music-player');
 
+const progressBarProgress = document.querySelector('.progress');
+
 albumArt.src = 'preview/music-icon.png';
+
+const songProgress = document.querySelector('.current-time');
+
+const songDuration = document.querySelector('.total-duration');
+
+currentSong.addEventListener('timeupdate', (event) => {
+    const { currentTime, duration } = event.srcElement;
+    let progressTime = (currentTime / duration) * 100;
+    progressBarProgress.style.width = `${progressTime}%`;
+
+    songProgress.textContent = `${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60)}`;
+    songDuration.textContent = `${-Math.floor((duration - currentTime) / 60)}:${Math.floor((duration - currentTime) % 60)}`;
+
+    if (currentTime > duration) {
+        forwardBtn.click();
+    }
+
+
+})
+
 
 function displaySongStatus(status) {
 
@@ -64,12 +86,19 @@ playPauseBtn.addEventListener('click', () => {
 
 forwardBtn.addEventListener('click', () => {
 
-    if (songindex == songs.length - 1) songindex = -1;
+    if (shuffle) {
+        menuItems[2].click();
+        menuItems[2].click();
+    }
+    else {
 
-    console.log(songindex);
+        if (songindex == songs.length - 1) songindex = -1;
 
-    songindex++;
+        console.log(songindex);
 
+        songindex++;
+
+    }
     songs[songindex].click();
 
     songs[songindex].click();

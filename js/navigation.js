@@ -15,6 +15,8 @@ const previewScreen = document.querySelector('.preview-screen');
 
 let splitScreen = false;
 
+let shuffle = false;
+
 let f = 0;
 
 function addSplitScreen() {
@@ -48,6 +50,8 @@ function resetStatusBar() {
 }
 
 menuBtn.addEventListener('click', () => {
+
+    shuffle = false;
 
     if (musicPlayer.classList.contains('menu-item-active') && f == 0) {
 
@@ -155,7 +159,26 @@ menuItems.forEach(ele => {
             if (ele != menuItems[0] && ele != menuItems[1]) {
                 // menuItemsScreen[2].classList.add('menu-item-active');
                 f = 1;
-                musicPlayer.classList.add('menu-item-active');
+                if (ele == menuItems[2]) {
+
+                    shuffle = true;
+
+                    songindex = Math.floor(Math.random() * (songs.length));
+
+                    console.log(songindex);
+
+                    musicPlayer.classList.add('menu-item-active');
+
+                    songs[songindex].click();
+
+                    songs[songindex].click();
+
+                }
+                else
+                    musicPlayer.classList.add('menu-item-active');
+
+                itemStatus.textContent = '';
+                artistPreview.textContent = '';
             }
             else f = 0;
 

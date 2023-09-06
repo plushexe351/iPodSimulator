@@ -19,8 +19,8 @@
   </head>
   <body>
     <div class="nav-items">
-      <i class="fas fa-power-off power-btn" title="sleep | wake"></i>
-      <i class="fas fa-question help-btn" title="how to use?"></i>
+      <i class="fas fa-power-off power-btn"></i>
+      <i class="fas fa-question help-btn"></i>
       <i class="fas fa-close close-instruction-window" title="close"></i>
     </div>
     <div class="how-to-use">
@@ -164,15 +164,25 @@
           <div class="">Work in Progress...</div>
         </div>
         <div class="music-player">
-          <img class="album-art" src="music/music-icon.png" alt="" />
+          <div class="song-div">
+            <img class="album-art" src="music/music-icon.png" alt="" />
 
-          <div class="info">
-            <div>
-              <h4 class="song-title song-info"></h4>
-              <p class="artist song-info"></p>
+            <div class="info">
+              <div>
+                <h4 class="song-title song-info"></h4>
+                <p class="artist song-info"></p>
+              </div>
+
+              <p id="song-count"></p>
             </div>
+          </div>
 
-            <p id="song-count"></p>
+          <div class="progress-div">
+            <div class="current-time">0:00</div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="total-duration">-0:00</div>
           </div>
 
           <audio id="current-song" src=""></audio>
