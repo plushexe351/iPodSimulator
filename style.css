@@ -183,8 +183,9 @@ body {
 
 .music-player {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 20px;
+    gap: 20px;
     align-items: center;
     color: black;
     z-index: 30;
@@ -241,13 +242,12 @@ body {
 }
 
 .music-player .album-art {
-    height: 55%;
-    width: 45%;
+    height: 65%;
+    width: 55%;
     /* transform-style: preserve-3d; */
-    background-color: pink;
+    background-color: black;
     transform: rotateY(30deg);
     -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0)70%, rgba(0, 0, 0, 0.2));
-    filter: brightness(0%);
 }
 
 
@@ -256,7 +256,7 @@ body {
 }
 
 .song-info p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 
@@ -459,7 +459,7 @@ body {
     }
 
     .song-info p {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 }
 

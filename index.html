@@ -15,6 +15,7 @@
     <script defer src="js/showcontrols.js"></script>
     <script defer src="js/coverflow.js"></script>
     <script defer src="js/music.js"></script>
+    <script defer src="js/sleep.js"></script>
   </head>
   <body>
     <div class="nav-items">
@@ -66,7 +67,7 @@
           <i class="fab fa-apple"></i>
         </div>
         <div class="status-bar">
-          <p>iPod</p>
+          <p id="status">iPod</p>
           <div class="status-icons">
             <i class="fa-solid fa-play play-pause-status"></i>
             <i class="fa-solid fa-battery"></i>
@@ -137,18 +138,6 @@
             <div class="songs" id="song-7" data-index="6">
               Is There Someone Else - The Weeknd
             </div>
-            <div class="songs" id="song-8" data-index="7">
-              Mary on A Cross - Ghost
-            </div>
-            <div class="songs" id="song-9" data-index="8">
-              Let's Fall in Love for the Night - FINNEAS
-            </div>
-            <div class="songs" id="song-10" data-index="9">
-              Melting - Kali Uchis
-            </div>
-            <div class="songs" id="song-11" data-index="10">
-              PRIDE. - Kendrick Lamar
-            </div>
           </div>
         </div>
 
@@ -162,9 +151,11 @@
           <img class="album-art" src="music/albumart1.png" alt="" />
 
           <div class="song-info">
-            <h4>Song title</h4>
-            <p>Artist / Description</p>
+            <h4 id="song-title">Song title</h4>
+            <p id="artist">Artist / Description</p>
           </div>
+
+          <audio id="current-song" src=""></audio>
         </div>
         <div class="menu-item-brief">No Podcasts</div>
       </div>
