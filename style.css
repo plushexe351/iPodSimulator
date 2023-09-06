@@ -229,7 +229,7 @@ body {
 }
 
 .preview-screen img {
-    /* transform: translate(-50px, 0); */
+    /* transform: translate(50px, 0); */
     object-fit: cover;
     /* animation: flowleft 10s linear infinite; */
 }
@@ -334,11 +334,11 @@ p.song-info,
 
 @keyframes flowleft {
     0% {
-        transform: translate(0, 0);
+        transform: translate(50px, 0);
     }
 
     100% {
-        transform: translate(-50px, 0);
+        transform: translate(-20px, 0);
     }
 }
 
