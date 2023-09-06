@@ -251,6 +251,15 @@ body {
 }
 
 
+.work-in-progress {
+    background-color: red !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
 .song-info h4 {
     font-size: 0.9rem;
 }
