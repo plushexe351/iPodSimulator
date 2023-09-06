@@ -298,7 +298,7 @@ body {
 
 .preview-screen .album-art {
     width: unset;
-    animation: flowleft 10s linear infinite;
+    animation: flowleft 5s linear infinite;
 }
 
 
@@ -334,11 +334,11 @@ p.song-info,
 
 @keyframes flowleft {
     0% {
-        transform: translate(0px, 0);
+        transform: translate(10px, 0);
     }
 
     100% {
-        transform: translate(-10px, 0);
+        transform: translate(-20px, 0);
     }
 }
 
