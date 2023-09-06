@@ -112,7 +112,7 @@ body {
 }
 
 .ipod.active .control-btn {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .screen {
@@ -185,10 +185,15 @@ body {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     color: black;
     z-index: 30;
+}
+
+#song-count {
+    position: absolute;
+    bottom: 30%;
 }
 
 .menu-item-screen {
@@ -202,33 +207,59 @@ body {
 
 .screen .preview-screen {
     position: absolute;
-    right: 0px;
+    right: 0;
+    top: 0;
     height: 100%;
     width: 50%;
-    background-color: black;
+    /* background-color: black; */
+    background-image: linear-gradient(to top left, #2d4669, #7fa5ca 90%);
     color: white;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
 }
 
 .preview-screen img {
     /* transform: translate(-50px, 0); */
     object-fit: cover;
-    width: 100%;
-    height: 100%;
     /* animation: flowleft 10s linear infinite; */
+}
+
+.preview-screen .preview-img,
+.preview-screen .album-art {
+    height: 100%;
+    width: 100%;
+}
+
+.preview-screen .icon-preview {
+    transform-style: preserve-3d;
+    height: 50%;
+    width: 80%;
+    transform: rotateY(30deg);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0)70%, rgba(0, 0, 0, 0.3));
 }
 
 .menu-item-brief {
     position: absolute;
     text-align: center;
     width: 50%;
-    font-size: 1rem;
+    padding-inline: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: white;
     font-weight: 700;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.296);
-    text-shadow: 0 0 10px black;
-    bottom: 5%;
+    /* -webkit-text-stroke: 1px rgba(0, 0, 0, 0.596); */
+    text-shadow: 0 0 3px black;
+    bottom: 10%;
     right: 0;
+}
+
+.song-artist-preview {
+    font-size: 0.7rem;
+    bottom: 4% !important;
 }
 
 .preview-screen .album-art {
@@ -244,10 +275,11 @@ body {
 .music-player .album-art {
     height: 65%;
     width: 55%;
+    padding: 10px;
     /* transform-style: preserve-3d; */
-    background-color: black;
+    background-image: linear-gradient(to top, rgb(39, 72, 138), rgb(151, 215, 255));
     transform: rotateY(30deg);
-    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0)70%, rgba(0, 0, 0, 0.2));
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0)70%, rgba(0, 0, 0, 0.3));
 }
 
 
@@ -260,12 +292,13 @@ body {
 }
 
 
-.song-info h4 {
-    font-size: 0.9rem;
+h4.song-info {
+    font-size: 1rem;
 }
 
-.song-info p {
-    font-size: 0.8rem;
+p.song-info,
+.info p {
+    font-size: 0.9rem;
 }
 
 
@@ -447,6 +480,18 @@ body {
         font-size: 1rem;
     }
 
+    .control-btn {
+        font-size: 0.8rem;
+    }
+
+    .ipod.active .control-btn {
+        font-size: 0.7rem;
+    }
+
+    .control-btn.press {
+        font-size: 0.65rem !important;
+    }
+
     .bootscreen {
         font-size: 3rem;
     }
@@ -463,11 +508,12 @@ body {
         font-size: 0.7rem;
     }
 
-    .song-info h4 {
+    h4.song-info {
         font-size: 0.7rem;
     }
 
-    .song-info p {
+    .info p,
+    p.song-info {
         font-size: 0.6rem;
     }
 }

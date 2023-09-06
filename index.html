@@ -19,9 +19,9 @@
   </head>
   <body>
     <div class="nav-items">
-      <i class="fas fa-power-off power-btn"></i>
-      <i class="fas fa-question help-btn"></i>
-      <i class="fas fa-close close-instruction-window"></i>
+      <i class="fas fa-power-off power-btn" title="sleep | wake"></i>
+      <i class="fas fa-question help-btn" title="how to use?"></i>
+      <i class="fas fa-close close-instruction-window" title="close"></i>
     </div>
     <div class="how-to-use">
       <h1>How To Use ?</h1>
@@ -41,10 +41,10 @@
           <i class="fa-solid fa-play"></i>
           <i class="fa-solid fa-pause"></i>
         </div>
-        <p>ArrowDown</p>
-        <p>ArrowUp</p>
-        <p>Enter / Return</p>
-        <p>Backspace</p>
+        <p><strong>(keyboard)</strong> ArrowDown</p>
+        <p><strong>(keyboard)</strong> ArrowUp</p>
+        <p><strong>(keyboard)</strong> Enter / Return</p>
+        <p><strong>(keyboard)</strong> Backspace</p>
       </div>
       <div class="what-it-does">
         <p>Power On / Off</p>
@@ -74,8 +74,15 @@
           </div>
         </div>
         <div class="preview-screen">
-          <!-- <img src="albumart2.png" alt="" /> -->
           <!-- <img src="brand.gif" alt="" /> -->
+          <!-- <div class="info">
+            <div class="song-info">
+              <h4 id="song-title">Song title</h4>
+              <p id="artist">Artist / Description</p>
+            </div>
+
+            <p id="song-count"></p>
+          </div> -->
         </div>
         <div class="flex-screen">
           <div
@@ -102,15 +109,24 @@
               id="shuffle-songs"
               class="menu-item"
               data-index="2"
-              data-brief="Available soon..."
+              data-brief=""
             >
               Shuffle Songs
             </div>
-            <div
-              id="now-playing"
+            <!-- <div
+              id="settings"
               class="menu-item"
               data-index="3"
               data-brief="Available soon..."
+            >
+              Settings
+            </div> -->
+            <div
+              id="now-playing"
+              (keyboard)
+              class="menu-item"
+              data-index="3"
+              data-brief=""
             >
               Now Playing
             </div>
@@ -148,16 +164,22 @@
           <div class="">Work in Progress...</div>
         </div>
         <div class="music-player">
-          <img class="album-art" src="music/albumart1.png" alt="" />
+          <img class="album-art" src="music/music-icon.png" alt="" />
 
-          <div class="song-info">
-            <h4 id="song-title">Song title</h4>
-            <p id="artist">Artist / Description</p>
+          <div class="info">
+            <div>
+              <h4 class="song-title song-info"></h4>
+              <p class="artist song-info"></p>
+            </div>
+
+            <p id="song-count"></p>
           </div>
 
           <audio id="current-song" src=""></audio>
         </div>
-        <div class="menu-item-brief">No Podcasts</div>
+        <div class="menu-item-brief"></div>
+        <div class="song-title-preview menu-item-brief"></div>
+        <div class="song-artist-preview menu-item-brief"></div>
       </div>
       <div class="button-ring">
         <div id="menu-btn" class="control-btn">menu</div>

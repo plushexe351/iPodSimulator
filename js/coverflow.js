@@ -29,8 +29,10 @@ menuItems.forEach(item => {
     item.addEventListener('click', () => {
         canCoverflow = item == menuItems[0] ? true : false;
         if (item == menuItems[0]) { coverflow(); }
-        else if (item == menuItems[1]) createPreviewImg('preview/brand.png', 'preview-img');
-        // else if (item == menuItems[2]) createPreviewImg()
+        else if (item == menuItems[1]) createPreviewImg('preview/podcast-icon.png', 'preview-img');
+        else if (item == menuItems[3]) createPreviewImg(albumArt.src, 'icon-preview');
+        else createPreviewImg('preview/music-icon.png', 'icon-preview');
+
     })
 })
 

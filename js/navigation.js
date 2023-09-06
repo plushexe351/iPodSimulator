@@ -2,6 +2,7 @@ const buttonRing = document.querySelector('.button-ring');
 const controlBtns = document.querySelectorAll('.control-btn');
 const menuBtn = document.querySelector('#menu-btn');
 const itemStatus = document.querySelector('.menu-item-brief');
+const artistPreview = document.querySelector('.song-artist-preview');
 const statusBar = document.querySelector('.status-bar');
 const menuItemsContainer = document.querySelector('.menu-items');
 const musicScreen = document.querySelector('.music-screen');
@@ -13,6 +14,8 @@ const flexScreen = document.querySelector('.flex-screen');
 const previewScreen = document.querySelector('.preview-screen');
 
 let splitScreen = false;
+
+let f = 0;
 
 function addSplitScreen() {
 
@@ -46,7 +49,7 @@ function resetStatusBar() {
 
 menuBtn.addEventListener('click', () => {
 
-    if (musicPlayer.classList.contains('menu-item-active')) {
+    if (musicPlayer.classList.contains('menu-item-active') && f == 0) {
 
         menuItemsScreen.forEach(screen => {
 
@@ -60,9 +63,17 @@ menuBtn.addEventListener('click', () => {
 
     else {
 
+        menuItemsScreen.forEach(screen => {
+
+            screen.style.display = 'unset';
+
+        })
+
+        musicPlayer.classList.remove('menu-item-active');
+
         flexScreen.style.display = 'unset';
 
-        previewScreen.style.display = 'unset';
+        previewScreen.style.display = 'flex';
 
         menuItems.forEach(ele => {
 
@@ -99,7 +110,19 @@ let index = -1;
 
 function displayItemBrief(item) {
 
-    itemStatus.textContent = item.dataset.brief;
+    // itemStatus.textContent = item.dataset.brief;
+
+    // itemStatus.innerHTML = item == menuItems[3] ? `${songTitle.textContent}-${artist.textContent}` : item.dataset.brief || '';
+
+    if (item == menuItems[3]) {
+        itemStatus.textContent = songTitle.textContent;
+        artistPreview.textContent = artist.textContent;
+    }
+    else {
+        itemStatus.textContent = item.dataset.brief || '';
+        artistPreview.textContent = '';
+    }
+
 
 }
 
@@ -127,8 +150,14 @@ menuItems.forEach(ele => {
 
             ele != menuItems[1] ? resetStatusBar() : null;
             ele == menuItems[0] ? menuItemsScreen[0].classList.add('menu-item-active') : null;
-            ele == menuItems[2] ? menuItemsScreen[1].classList.add('menu-item-active') : null;
-            ele == menuItems[3] ? menuItemsScreen[2].classList.add('menu-item-active') : null;
+            // ele == menuItems[2] ? menuItemsScreen[1].classList.add('menu-item-active') : null;
+
+            if (ele != menuItems[0] && ele != menuItems[1]) {
+                // menuItemsScreen[2].classList.add('menu-item-active');
+                f = 1;
+                musicPlayer.classList.add('menu-item-active');
+            }
+            else f = 0;
 
         }
 

@@ -2,9 +2,9 @@ const songs = document.querySelectorAll('.songs');
 
 const albumArt = document.querySelector('.music-player > .album-art');
 
-const songTitle = document.getElementById('song-title');
+const songTitle = document.querySelector('.song-title');
 
-const artist = document.getElementById('artist');
+const artist = document.querySelector('.artist');
 
 const currentSong = document.getElementById('current-song');
 
@@ -16,11 +16,13 @@ const forwardBtn = document.getElementById('forwards-btn');
 
 const previousBtn = document.getElementById('previous-btn');
 
+const songCount = document.getElementById('song-count');
+
 let songindex = -1;
 
-let nowPlaying = false;
-
 const musicPlayer = document.querySelector('.music-player');
+
+albumArt.src = 'preview/music-icon.png';
 
 function displaySongStatus(status) {
 
@@ -30,7 +32,7 @@ function displaySongStatus(status) {
 
         songStatus.textContent = 'iPod';
 
-    }, 2000);
+    }, 5000);
 
 }
 
@@ -63,9 +65,13 @@ playPauseBtn.addEventListener('click', () => {
 forwardBtn.addEventListener('click', () => {
 
     if (songindex == songs.length - 1) songindex = -1;
+
     console.log(songindex);
+
     songindex++;
+
     songs[songindex].click();
+
     songs[songindex].click();
 
 })
@@ -75,10 +81,28 @@ previousBtn.addEventListener('click', () => {
     if (songindex == 0) songindex = songs.length;
 
     songindex--;
+
     songs[songindex].click();
+
     songs[songindex].click();
 
 })
+
+document.addEventListener('keydown', (event) => {
+
+    if (event.which == 32) {
+
+        if (musicPlayer.classList.contains('menu-item-active')) {
+
+            playPauseBtn.click();
+
+        }
+
+    }
+
+})
+
+
 
 songs.forEach(song => {
 
@@ -100,21 +124,24 @@ songs.forEach(song => {
 
             musicPlayer.classList.add('menu-item-active');
 
-            currentSong.src = `music/song${songindex + 1}.mp3`;
+            songTitle.textContent = song.textContent.split('-')[0];
+
+            artist.textContent = song.textContent.split('-')[1];
 
             albumArt.src = `music/albumart${songindex + 1}.png`;
+
+            albumArt.style.padding = `unset`;
+
+            currentSong.src = `music/song${songindex + 1}.mp3`;
 
             currentSong.play();
 
             currentSong.classList.add('play');
 
-            nowPlaying = true;
+            songCount.textContent = `${songindex + 1} of ${songs.length}`
 
             displaySongStatus('Now Playing');
 
-            songTitle.textContent = song.textContent.split('-')[0];
-
-            artist.textContent = song.textContent.split('-')[1];
 
         }
 
