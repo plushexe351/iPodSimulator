@@ -83,39 +83,55 @@ playPauseBtn.addEventListener('click', () => {
 })
 
 
+// if (musicPlayer.classList.contains('menu-item-active')) {
 
 forwardBtn.addEventListener('click', () => {
 
-    if (shuffle) {
-        menuItems[2].click();
-        menuItems[2].click();
+    if (musicPlayer.classList.contains('menu-item-active')) {
+
+        if (shuffle) {
+            menuItems[2].click();
+            menuItems[2].click();
+        }
+        else {
+
+            if (songindex == songs.length - 1) songindex = -1;
+
+            console.log(songindex);
+
+            songindex++;
+
+        }
+        songs[songindex].click();
+
+        songs[songindex].click();
     }
-    else {
-
-        if (songindex == songs.length - 1) songindex = -1;
-
-        console.log(songindex);
-
-        songindex++;
-
-    }
-    songs[songindex].click();
-
-    songs[songindex].click();
 
 })
+
 
 previousBtn.addEventListener('click', () => {
 
-    if (songindex == 0) songindex = songs.length;
+    if (musicPlayer.classList.contains('menu-item-active')) {
 
-    songindex--;
+        if (songindex == 0) songindex = songs.length;
 
-    songs[songindex].click();
+        songindex--;
 
-    songs[songindex].click();
+        songs[songindex].click();
+
+        songs[songindex].click();
+    }
 
 })
+
+document.body.addEventListener('keydown', (event) => {
+    if (musicPlayer.classList.contains('menu-item-active')) {
+        if (event.which === 37) previousBtn.click();
+        if (event.which === 39) nextBtn.click();
+    }
+})
+
 
 document.addEventListener('keydown', (event) => {
 

@@ -32,6 +32,21 @@ function coverflow() {
     setTimeout(() => {
         canCoverflow ? createPreviewImg('music/albumart7.png', 'album-art') : null;
     }, 30000);
+    setTimeout(() => {
+        canCoverflow ? createPreviewImg('music/albumart8.png', 'album-art') : null;
+    }, 35000);
+    setTimeout(() => {
+        canCoverflow ? createPreviewImg('music/albumart9.png', 'album-art') : null;
+    }, 40000);
+    setTimeout(() => {
+        canCoverflow ? createPreviewImg('music/albumart10.png', 'album-art') : null;
+    }, 45000);
+    setTimeout(() => {
+        canCoverflow ? createPreviewImg('music/albumart11.png', 'album-art') : null;
+    }, 50000);
+    setTimeout(() => {
+        canCoverflow ? createPreviewImg('music/albumart12.png', 'album-art') : null;
+    }, 55000);
 }
 
 menuItems.forEach(item => {
