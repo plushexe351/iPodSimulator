@@ -1,3 +1,7 @@
 # iPodSimulator
 
-As the name says, this is an online iPodSimulator with music player, made using html,css and javascript.
+This is an iPod themed music player, made using html,css and Vanilla JavaScript.
+
+## Preview
+
+live Preview : https://plushexe351.github.io/iPodSimulator/
