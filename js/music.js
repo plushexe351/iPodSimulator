@@ -36,7 +36,7 @@ currentSong.addEventListener('timeupdate', (event) => {
     const { currentTime, duration } = event.srcElement;
     let progressTime = (currentTime / duration) * 100;
     progressBarProgress.style.width = `${progressTime}%`;
-
+    console.log(duration);
     songProgress.textContent = `${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60)}`;
     songDuration.textContent = `${-Math.floor((duration - currentTime) / 60)}:${Math.floor((duration - currentTime) % 60)}`;
 
@@ -186,6 +186,8 @@ songs.forEach(song => {
             currentSong.src = `music/song${songindex + 1}.mp3`;
 
             currentSong.play();
+
+            console.log(currentSong);
 
             currentSong.classList.add('play');
 
