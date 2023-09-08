@@ -121,10 +121,8 @@ function displayItemBrief(item) {
     if (item == menuItems[3]) {
         itemStatus.textContent = songTitle.textContent;
         artistPreview.textContent = artist.textContent;
-        previewScreen.style.justifyContent = 'center';
     }
     else {
-        previewScreen.style.justifyContent = 'flex-start';
         itemStatus.textContent = item.dataset.brief || '';
         artistPreview.textContent = '';
     }
@@ -137,6 +135,11 @@ menuItems.forEach(ele => {
     ele.addEventListener('click', () => {
 
         displayItemBrief(ele);
+
+        if (ele == menuItems[0])
+            previewScreen.style.justifyContent = 'flex-start';
+        else
+            previewScreen.style.justifyContent = 'center';
 
         while (imgContainer.hasChildNodes()) {
 
