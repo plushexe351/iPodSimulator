@@ -546,6 +546,10 @@ p.song-info,
     p.song-info {
         font-size: 0.6rem;
     }
+
+    .song-artist-preview {
+        font-size: 0.5rem;
+    }
 }
 
 @media only screen and (max-width:500px) {

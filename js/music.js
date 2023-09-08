@@ -24,6 +24,8 @@ const musicPlayer = document.querySelector('.music-player');
 
 const progressBarProgress = document.querySelector('.progress');
 
+const playPauseStatus = document.querySelector('.play-pause-status');
+
 albumArt.src = 'preview/music-icon.png';
 
 const songProgress = document.querySelector('.current-time');
@@ -49,6 +51,11 @@ currentSong.addEventListener('timeupdate', (event) => {
 function displaySongStatus(status) {
 
     songStatus.textContent = status;
+
+    if (status == 'Paused') {
+        playPauseStatus.classList.replace('fa-play', 'fa-pause');
+    }
+    else playPauseStatus.classList.replace('fa-pause', 'fa-play');
 
     setTimeout(() => {
 
