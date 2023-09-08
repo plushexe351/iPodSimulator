@@ -170,8 +170,6 @@ menuItems.forEach(ele => {
 
                     songindex = Math.floor(Math.random() * (songs.length));
 
-                    console.log(songindex);
-
                     musicPlayer.classList.add('menu-item-active');
 
                     songs[songindex].click();
