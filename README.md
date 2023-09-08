@@ -13,7 +13,7 @@ Live Preview : https://plushexe351.github.io/iPodSimulator/
 - Sleep / Wake with animated bootscreen
 - Play and browse through songs with an iPod like experience
 - Use buttons on screen to Forward/Previous/Play/Pause/Shuffle songs
-- There is Keyboard support as well. Check the instruction panel to check key binding
+- There is Keyboard support as well, check the how-to-use panel in the website for key bindings
 - iPod sleeps when user's focus goes away from browser or changes tab
 
 Features under development :
