@@ -16,7 +16,7 @@ Live Preview : https://plushexe351.github.io/iPodSimulator/
 - There is Keyboard support as well, check the how-to-use panel in the website for key bindings
 - iPod sleeps when user's focus goes away from browser or changes tab
 
-Features under development :
+### Features under development :
 
 - Tap on progress bar to go to that part of the song
 - Forward fast song
