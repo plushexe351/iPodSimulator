@@ -1,6 +1,6 @@
 # iPodSimulator
 
-This is an iPod themed music player, made using html,css and Vanilla JavaScript.
+This is an iPod themed music player, made using HTML, CSS and Vanilla JavaScript.
 
 ## Preview
 
