@@ -224,7 +224,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     perspective: 800px;
 }
 
@@ -334,11 +334,11 @@ p.song-info,
 
 @keyframes flowleft {
     0% {
-        transform: translate(10px, 0);
+        transform: translate(0px, 0);
     }
 
     100% {
-        transform: translate(-20px, 0);
+        transform: translate(-2.5rem, 0);
     }
 }
 
