@@ -135,7 +135,7 @@ previousBtn.addEventListener('click', () => {
 document.body.addEventListener('keydown', (event) => {
     if (musicPlayer.classList.contains('menu-item-active')) {
         if (event.which === 37) previousBtn.click();
-        if (event.which === 39) nextBtn.click();
+        else if (event.which === 39) forwardBtn.click();
     }
 })
 
@@ -153,7 +153,6 @@ document.addEventListener('keydown', (event) => {
     }
 
 })
-
 
 
 songs.forEach(song => {
@@ -219,6 +218,8 @@ songs.forEach(song => {
         song.classList.add('active2');
 
         song.appendChild(itemSelector);
+
+
 
         songindex = parseInt(song.dataset.index);
 

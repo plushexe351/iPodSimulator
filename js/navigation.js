@@ -121,8 +121,10 @@ function displayItemBrief(item) {
     if (item == menuItems[3]) {
         itemStatus.textContent = songTitle.textContent;
         artistPreview.textContent = artist.textContent;
+        previewScreen.style.justifyContent = 'center';
     }
     else {
+        previewScreen.style.justifyContent = 'flex-start';
         itemStatus.textContent = item.dataset.brief || '';
         artistPreview.textContent = '';
     }
